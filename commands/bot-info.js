@@ -17,15 +17,15 @@ module.exports = {
 		uptime -= minutes * 60;
 		const seconds = Math.floor(uptime % 60)
 		if (days) {
-			uptime = `${days} days ${hours} hours ${minutes} minutes ${seconds} seconds`
+			uptime = `${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`
 		} else if (hours) {
-			uptime = `${hours} hours ${minutes} minutes ${seconds} seconds`
+			uptime = `${hours} hours, ${minutes} minutes, ${seconds} seconds`
 		} else if (minutes) {
-			uptime = `${minutes} minutes ${seconds} seconds`
+			uptime = `${minutes} minutes, ${seconds} seconds`
 		} else if (seconds) {
 			uptime = `${seconds} seconds`
 		} else {
-			uptime = `${days} days ${hours} hours ${minutes} minutes ${seconds} seconds`
+			uptime = `${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`
 		}
 
 		// Buttons
