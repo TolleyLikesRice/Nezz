@@ -39,6 +39,7 @@ module.exports = {
 
 		// Make + Send Embed
 		const embed = new MessageEmbed()
+			.setTitle("Nezz")
 			.setColor('#0099ff')
 			.setThumbnail('https://i.imgur.com/AfFp7pu.png')
 			.addFields(

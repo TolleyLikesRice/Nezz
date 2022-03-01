@@ -14,7 +14,7 @@ module.exports = {
 					.setURL('https://github.com/TolleyLikesRice')
 					.setLabel('GitHub')
 					.setStyle('LINK'),
-					new MessageButton()
+				new MessageButton()
 					.setURL('https://twitter.com/TolleyLikesRice')
 					.setLabel('Twitter')
 					.setStyle('LINK'),
@@ -22,8 +22,14 @@ module.exports = {
 
 		// Make + Send Embed
 		const embed = new MessageEmbed()
+			.setTitle("About Me")
 			.setColor('#0099ff')
-			.setDescription("I'm Bri'ish, I've used Discord since Nov 2016. I'm not a super experienced developer, but know my way around Node.js. GEORGE WHAT ELSE DO I PUT HERE")
+			.setDescription("I'm Bri'ish, I've used Discord since Nov 2016. I'm not a super experienced developer, but know my way around Node.js.\n\nI manage a dedicated server, if you need anything hosted, shoot me a PM on Twitter or Discord\n\nIf something is broken, open an issue on GitHub or shoot me a PM on Twitter or Discord")
+			.addFields(
+				{ name: 'Twitter', value: '@TolleyLikesRice', inline: true },
+				{ name: 'Discord', value: 'Tolley#3216', inline: true },
+				{ name: 'GitHub', value: 'TolleyLikesRice', inline: true },
+			)
 			.setFooter({ text: 'Nezz by TolleyLikesRice', iconURL: 'https://i.imgur.com/AfFp7pu.png' });
 		return interaction.reply({ embeds: [embed], components: [row] });
 	},
