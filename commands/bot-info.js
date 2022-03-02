@@ -41,7 +41,7 @@ module.exports = {
 		const embed = new MessageEmbed()
 			.setTitle("Nezz")
 			.setColor('#0099ff')
-			.setThumbnail('https://github.com/TolleyLikesRice/Nezz/raw/main/assets/icon.png')
+			.setThumbnail('https://github.com/TolleyLikesRice/Nezz/raw/main/assets/icon-256.png')
 			.addFields(
 				{ name: 'Version', value: 'v0.0.1', inline: true },
 				{ name: 'Guilds', value: `${interaction.client.guilds.cache.size || "Unknown"}`, inline: true },
@@ -50,7 +50,7 @@ module.exports = {
 				{ name: 'Uptime', value: `${uptime}` },
 			)
 			.setTimestamp()
-			.setFooter({ text: 'Nezz by TolleyLikesRice', iconURL: 'https://github.com/TolleyLikesRice/Nezz/raw/main/assets/icon.png' });
+			.setFooter({ text: 'Nezz by TolleyLikesRice', iconURL: 'https://github.com/TolleyLikesRice/Nezz/raw/main/assets/icon-256.png' });
 		return interaction.reply({ embeds: [embed], components: [row] });
 	},
 };

@@ -1,4 +1,4 @@
-!(Nezz Icon)[https://github.com/TolleyLikesRice/Nezz/raw/main/assets/icon.png]
+!(Nezz Icon)[https://github.com/TolleyLikesRice/Nezz/raw/main/assets/icon-256.png]
 
 Very still WIP
 

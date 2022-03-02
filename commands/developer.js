@@ -30,7 +30,7 @@ module.exports = {
 				{ name: 'Discord', value: 'Tolley#3216', inline: true },
 				{ name: 'GitHub', value: 'TolleyLikesRice', inline: true },
 			)
-			.setFooter({ text: 'Nezz by TolleyLikesRice', iconURL: 'https://github.com/TolleyLikesRice/Nezz/raw/main/assets/icon.png' });
+			.setFooter({ text: 'Nezz by TolleyLikesRice', iconURL: 'https://github.com/TolleyLikesRice/Nezz/raw/main/assets/icon-256.png' });
 		return interaction.reply({ embeds: [embed], components: [row] });
 	},
 };
