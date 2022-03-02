@@ -68,7 +68,7 @@ module.exports = {
                 { name: 'Account Age', value: age, inline: true },
             )
             .setColor('#0099ff')
-            .setFooter({ text: 'Nezz by TolleyLikesRice', iconURL: 'https://i.imgur.com/AfFp7pu.png' });
+            .setFooter({ text: 'Nezz by TolleyLikesRice', iconURL: 'https://github.com/TolleyLikesRice/Nezz/raw/main/assets/icon.png' });
         
         if (avatarURL || bannerURL) return interaction.reply({ embeds: [embed], components: [row] });
         return interaction.reply({ embeds: [embed] });;

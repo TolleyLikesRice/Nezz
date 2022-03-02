@@ -59,7 +59,7 @@ module.exports = {
                 { name: 'Nezz has been here', value: inServer, inline: true },
             )
             .setColor('#0099ff')
-            .setFooter({ text: 'Nezz by TolleyLikesRice', iconURL: 'https://i.imgur.com/AfFp7pu.png' });
+            .setFooter({ text: 'Nezz by TolleyLikesRice', iconURL: 'https://github.com/TolleyLikesRice/Nezz/raw/main/assets/icon.png' });
         return interaction.reply({ embeds: [embed] });
     },
 };
