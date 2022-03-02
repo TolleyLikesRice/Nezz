@@ -18,15 +18,19 @@ module.exports = {
 
         // Buttons
         let row = new MessageActionRow()
-        .addComponents(
-            new MessageButton()
-                .setURL(user.avatarURL())
-                .setLabel('Avatar URL')
-                .setStyle('LINK'),
-        );
 
+        let avatarURL = user.avatarURL();
+        if (avatarURL) {
+            row = row.addComponents(
+                new MessageButton()
+                    .setURL(avatarURL)
+                    .setLabel('Avatar URL')
+                    .setStyle('LINK')
+            )
+        }
+
+        
         let bannerURL = user.bannerURL();
-
         if (bannerURL) {
             row = row.addComponents(
                 new MessageButton()
@@ -65,6 +69,8 @@ module.exports = {
             )
             .setColor('#0099ff')
             .setFooter({ text: 'Nezz by TolleyLikesRice', iconURL: 'https://i.imgur.com/AfFp7pu.png' });
-        return interaction.reply({ embeds: [embed], components: [row] });
+        
+        if (avatarURL || bannerURL) return interaction.reply({ embeds: [embed], components: [row] });
+        return interaction.reply({ embeds: [embed] });;
     },
 };
