@@ -50,7 +50,7 @@ module.exports = {
 				{ name: 'Uptime', value: `${uptime}` },
 			)
 			.setTimestamp()
-			.setFooter({ text: 'Nezz by TolleyLikesRice', iconURL: 'https://github.com/TolleyLikesRice/Nezz/raw/main/assets/icon-256.png' });
+			.setFooter({ text: 'Nezz', iconURL: 'https://github.com/TolleyLikesRice/Nezz/raw/main/assets/icon-256.png' });
 		return interaction.reply({ embeds: [embed], components: [row] });
 	},
 };
