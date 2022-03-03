@@ -67,7 +67,7 @@ module.exports = {
                 { name: 'Creation Date', value: user.createdAt.toISOString().split('T')[0], inline: true },
                 { name: 'Account Age', value: age, inline: true },
             )
-            .setColor('#0099ff')
+            .setColor('#184c46')
             .setFooter({ text: 'Nezz by TolleyLikesRice', iconURL: 'https://github.com/TolleyLikesRice/Nezz/raw/main/assets/icon-256.png' });
         
         if (avatarURL || bannerURL) return interaction.reply({ embeds: [embed], components: [row] });

@@ -58,7 +58,7 @@ module.exports = {
                 { name: 'Nezz joined', value: guild.joinedAt.toISOString().split('T')[0], inline: true },
                 { name: 'Nezz has been here', value: inServer, inline: true },
             )
-            .setColor('#0099ff')
+            .setColor('#184c46')
             .setFooter({ text: 'Nezz by TolleyLikesRice', iconURL: 'https://github.com/TolleyLikesRice/Nezz/raw/main/assets/icon-256.png' });
         return interaction.reply({ embeds: [embed] });
     },

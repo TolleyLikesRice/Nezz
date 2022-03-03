@@ -40,7 +40,7 @@ module.exports = {
 		// Make + Send Embed
 		const embed = new MessageEmbed()
 			.setTitle("Nezz")
-			.setColor('#0099ff')
+			.setColor('#184c46')
 			.setThumbnail('https://github.com/TolleyLikesRice/Nezz/raw/main/assets/icon-256.png')
 			.addFields(
 				{ name: 'Version', value: require('../package.json').version, inline: true },

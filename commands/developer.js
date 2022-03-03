@@ -23,7 +23,7 @@ module.exports = {
 		// Make + Send Embed
 		const embed = new MessageEmbed()
 			.setTitle("About Me")
-			.setColor('#0099ff')
+			.setColor('#184c46')
 			.setDescription("I'm Bri'ish, I've used Discord since Nov 2016. I'm not a super experienced developer, but know my way around Node.js.\n\nI manage a dedicated server, if you need anything hosted, shoot me a PM on Twitter or Discord\n\nIf something is broken, open an issue on GitHub or shoot me a PM on Twitter or Discord")
 			.addFields(
 				{ name: 'Twitter', value: '@TolleyLikesRice', inline: true },
