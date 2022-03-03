@@ -43,7 +43,7 @@ module.exports = {
 			.setColor('#0099ff')
 			.setThumbnail('https://github.com/TolleyLikesRice/Nezz/raw/main/assets/icon-256.png')
 			.addFields(
-				{ name: 'Version', value: 'v0.0.1', inline: true },
+				{ name: 'Version', value: require('../package.json').version, inline: true },
 				{ name: 'Guilds', value: `${interaction.client.guilds.cache.size || "Unknown"}`, inline: true },
 				{ name: 'Library', value: 'discord.js', inline: true },
 				{ name: 'Memory Usage', value: `${Math.ceil(process.memoryUsage().heapUsed / 1048576)} MB`, inline: true },
