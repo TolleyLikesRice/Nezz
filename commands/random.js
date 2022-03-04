@@ -13,8 +13,8 @@ module.exports = {
                 .setDescription('Maximum of the random number')
                 .setRequired(true)),
     async execute(interaction) {
-        const min = interaction.options.getInteger('min')
-        const max = interaction.options.getInteger('max')
-        interaction.reply(`Your random number between ${min} and ${max} is: ${Math.floor(Math.random() * (max - min) + min).toString()}`)
+        const min = interaction.options.getInteger('min');
+        const max = interaction.options.getInteger('max');
+        interaction.reply(`Your random number between ${min} and ${max} is: ${Math.floor(Math.random() * (max - min) + min).toString()}`);
     },
 };

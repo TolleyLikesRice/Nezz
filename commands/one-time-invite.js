@@ -18,6 +18,6 @@ module.exports = {
                 .addChoice('1w', 604800)),
     async execute(interaction) {
         interaction.guild.invites.create(interaction.options.getChannel('channel') || interaction.channelId, { maxUses: 1, maxAge: interaction.options.getInteger('expiry') || 604800, unique: true })
-            .then(invite => interaction.reply({ content: invite.toString(), ephemeral: true }))
+            .then(invite => interaction.reply({ content: invite.toString(), ephemeral: true }));
     },
 };

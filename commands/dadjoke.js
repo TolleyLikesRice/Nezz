@@ -6,7 +6,7 @@ module.exports = {
         .setName('dadjoke')
         .setDescription('Have a dad joke'),
     async execute(interaction) {
-        axios({ url: 'https://icanhazdadjoke.com/', headers: { 'Accept': 'text/plain', "User-Agent": "nezz" }, })
+        axios({ url: 'https://icanhazdadjoke.com/', headers: { 'Accept': 'text/plain', 'User-Agent': 'nezz' } })
             .then(res => {
                 interaction.reply(res.data);
             })

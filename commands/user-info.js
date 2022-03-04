@@ -14,47 +14,50 @@ module.exports = {
         const user = interaction.options.getUser('user') || interaction.user;
 
         // Force Fetch (up-to-date info, and for banner)
-        await user.fetch(true)
+        await user.fetch(true);
 
         // Buttons
-        let row = new MessageActionRow()
+        let row = new MessageActionRow();
 
-        let avatarURL = user.avatarURL();
+        const avatarURL = user.avatarURL();
         if (avatarURL) {
             row = row.addComponents(
                 new MessageButton()
                     .setURL(avatarURL)
                     .setLabel('Avatar URL')
-                    .setStyle('LINK')
-            )
+                    .setStyle('LINK'),
+            );
         }
 
-        
-        let bannerURL = user.bannerURL();
+
+        const bannerURL = user.bannerURL();
         if (bannerURL) {
             row = row.addComponents(
                 new MessageButton()
                     .setURL(bannerURL)
                     .setLabel('Banner URL')
-                    .setStyle('LINK')
-            )
+                    .setStyle('LINK'),
+            );
         }
 
         // Account Age
-        var t = new Date().getTime() - user.createdAt.getTime();
+        const t = new Date().getTime() - user.createdAt.getTime();
 
-        var age = t / (1000 * 3600 * 24);
-        var years = Math.floor(age / 365);
-        var months = Math.floor(age % 365 / 30);
-        var days = Math.floor(age % 365 % 30);
+        let age = t / (1000 * 3600 * 24);
+        const years = Math.floor(age / 365);
+        const months = Math.floor(age % 365 / 30);
+        const days = Math.floor(age % 365 % 30);
         if (years) {
-            age = `${years} years, ${months} months, ${days} days`
-        } else if (months) {
-            age = `${months} months, ${days} days`
-        } else if (days) {
-            age = `${days} days`
-        } else {
-            age = `${years} years, ${months} months, ${days} days`
+            age = `${years} years, ${months} months, ${days} days`;
+        }
+        else if (months) {
+            age = `${months} months, ${days} days`;
+        }
+        else if (days) {
+            age = `${days} days`;
+        }
+        else {
+            age = `${years} years, ${months} months, ${days} days`;
         }
 
 
@@ -69,8 +72,8 @@ module.exports = {
             )
             .setColor('#184c46')
             .setFooter({ text: 'Nezz', iconURL: 'https://github.com/TolleyLikesRice/Nezz/raw/main/assets/icon-256.png' });
-        
+
         if (avatarURL || bannerURL) return interaction.reply({ embeds: [embed], components: [row] });
-        return interaction.reply({ embeds: [embed] });;
+        return interaction.reply({ embeds: [embed] });
     },
 };

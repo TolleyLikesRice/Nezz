@@ -19,5 +19,8 @@
   },
   "author": "TolleyLikesRice",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "eslint": "^8.10.0"
+  }
 }

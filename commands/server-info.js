@@ -10,40 +10,46 @@ module.exports = {
         const guild = interaction.guild;
 
         // Force Fetch
-        await guild.fetch(true)
+        await guild.fetch(true);
 
         // Server Age
-        var t = new Date().getTime() - guild.createdAt.getTime();
+        let t = new Date().getTime() - guild.createdAt.getTime();
 
-        var age = t / (1000 * 3600 * 24);
-        var years = Math.floor(age / 365);
-        var months = Math.floor(age % 365 / 30);
-        var days = Math.floor(age % 365 % 30);
+        let age = t / (1000 * 3600 * 24);
+        let years = Math.floor(age / 365);
+        let months = Math.floor(age % 365 / 30);
+        let days = Math.floor(age % 365 % 30);
         if (years) {
-            age = `${years} years, ${months} months, ${days} days`
-        } else if (months) {
-            age = `${months} months, ${days} days`
-        } else if (days) {
-            age = `${days} days`
-        } else {
-            age = `${years} years, ${months} months, ${days} days`
+            age = `${years} years, ${months} months, ${days} days`;
+        }
+        else if (months) {
+            age = `${months} months, ${days} days`;
+        }
+        else if (days) {
+            age = `${days} days`;
+        }
+        else {
+            age = `${years} years, ${months} months, ${days} days`;
         }
 
         // Bot in server time
-        var t = new Date().getTime() - guild.joinedAt.getTime();
+        t = new Date().getTime() - guild.joinedAt.getTime();
 
-        var inServer = t / (1000 * 3600 * 24);
-        var years = Math.floor(inServer / 365);
-        var months = Math.floor(inServer % 365 / 30);
-        var days = Math.floor(inServer % 365 % 30);
+        let inServer = t / (1000 * 3600 * 24);
+        years = Math.floor(inServer / 365);
+        months = Math.floor(inServer % 365 / 30);
+        days = Math.floor(inServer % 365 % 30);
         if (years) {
-            inServer = `${years} years, ${months} months, ${days} days`
-        } else if (months) {
-            inServer = `${months} months, ${days} days`
-        } else if (days) {
-            inServer = `${days} days`
-        } else {
-            inServer = `${years} years, ${months} months, ${days} days`
+            inServer = `${years} years, ${months} months, ${days} days`;
+        }
+        else if (months) {
+            inServer = `${months} months, ${days} days`;
+        }
+        else if (days) {
+            inServer = `${days} days`;
+        }
+        else {
+            inServer = `${years} years, ${months} months, ${days} days`;
         }
 
         // Make + Send Embed
