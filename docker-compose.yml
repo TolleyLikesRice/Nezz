@@ -7,3 +7,4 @@ services:
       - TOKEN
       - CLIENTID
       - GUILDID
+      - WEATHERKEY
