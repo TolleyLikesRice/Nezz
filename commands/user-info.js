@@ -71,6 +71,7 @@ module.exports = {
                 { name: 'Account Age', value: age, inline: true },
             )
             .setColor('#184c46')
+            .setTimestamp()
             .setFooter({ text: 'Nezz', iconURL: 'https://github.com/TolleyLikesRice/Nezz/raw/main/assets/icon-256.png' });
 
         if (avatarURL || bannerURL) return interaction.reply({ embeds: [embed], components: [row] });

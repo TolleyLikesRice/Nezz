@@ -67,6 +67,7 @@ module.exports = {
                                 { name: 'Humidity', value: `${data.humidity.toString()}%`, inline: true },
                             )
                             .setColor(colour)
+                            .setTimestamp()
                             .setFooter({ text: 'Nezz', iconURL: 'https://github.com/TolleyLikesRice/Nezz/raw/main/assets/icon-256.png' });
                         interaction.reply({ embeds: [embed] });
 

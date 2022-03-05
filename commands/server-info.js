@@ -65,6 +65,7 @@ module.exports = {
                 { name: 'Nezz has been here', value: inServer, inline: true },
             )
             .setColor('#184c46')
+            .setTimestamp()
             .setFooter({ text: 'Nezz', iconURL: 'https://github.com/TolleyLikesRice/Nezz/raw/main/assets/icon-256.png' });
         return interaction.reply({ embeds: [embed] });
     },
