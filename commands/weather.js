@@ -2,6 +2,8 @@ const { SlashCommandBuilder } = require('@discordjs/builders');
 const { MessageEmbed } = require('discord.js');
 const axios = require('axios').default;
 const moment = require('moment-timezone');
+const tsjl = require('tsjl-node');
+const logger = new tsjl.Logger('nezz', 'weather');
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -73,11 +75,11 @@ module.exports = {
 
                     })
                     .catch(err => {
-                        console.log('Error: ', err.message);
+                        logger.error('Error: ', err.message);
                     });
             })
             .catch(err => {
-                console.log('Error: ', err.message);
+                logger.error('Error: ', err.message);
             });
     },
 };

@@ -1,5 +1,7 @@
 const fs = require('node:fs');
 const { Client, Collection, Intents } = require('discord.js');
+const tsjl = require('tsjl-node');
+const logger = new tsjl.Logger('nezz', 'app');
 require('dotenv').config();
 
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
@@ -13,7 +15,7 @@ for (const file of commandFiles) {
 }
 
 client.once('ready', () => {
-    console.log('Ready!');
+    logger.success('Ready!');
 });
 
 client.on('interactionCreate', async interaction => {
@@ -27,7 +29,7 @@ client.on('interactionCreate', async interaction => {
         await command.execute(interaction);
     }
     catch (error) {
-        console.error(error);
+        logger.error(error);
         await interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true });
     }
 });
