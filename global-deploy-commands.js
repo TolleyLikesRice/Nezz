@@ -1,8 +1,7 @@
 const fs = require('node:fs');
 const { REST } = require('@discordjs/rest');
 const { Routes } = require('discord-api-types/v9');
-const tsjl = require('tsjl-node');
-const logger = new tsjl.Logger('nezz', 'global-deploy-commands');
+
 require('dotenv').config();
 
 const commands = [];
@@ -16,5 +15,5 @@ for (const file of commandFiles) {
 const rest = new REST({ version: '9' }).setToken(process.env.TOKEN);
 
 rest.put(Routes.applicationCommands(process.env.CLIENTID), { body: commands })
-    .then(() => logger.log('Successfully registered application commands.'))
-    .catch(logger.error);
+    .then(() => console.log('Successfully registered application commands.'))
+    .catch(console.error);
