@@ -20,6 +20,7 @@ client.once('ready', () => {
     if (process.env.UPTIMEPING) {
         setInterval(function() {
             // Ping uptime kuma every 60 seconds
+            logger.trace('Pinging uptime server...');
             axios.get(process.env.UPTIMEPING);
         }, 60 * 1000);
     }
