@@ -2,7 +2,7 @@ version: "3.9"
 services:
   discord:
     build: .
-    image: discord:0.2.2
+    image: discord:0.2.3
     environment:
       - TOKEN
       - CLIENTID
