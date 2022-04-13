@@ -2,6 +2,7 @@ const fs = require('node:fs');
 const { Client, Collection, Intents } = require('discord.js');
 const tsjl = require('tsjl-node');
 const logger = new tsjl.Logger('nezz', 'app');
+const axios = require('axios').default;
 require('dotenv').config();
 
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
@@ -16,6 +17,10 @@ for (const file of commandFiles) {
 
 client.once('ready', () => {
     logger.success('Ready!');
+    setInterval(function() {
+        // Ping uptime kuma every 60 seconds
+        axios.get('https://uptime.tolley.dev/api/push/vzGKZlaPK4?msg=OK');
+    }, 60 * 1000);
 });
 
 client.on('interactionCreate', async interaction => {
