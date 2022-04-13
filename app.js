@@ -17,10 +17,12 @@ for (const file of commandFiles) {
 
 client.once('ready', () => {
     logger.success('Ready!');
-    setInterval(function() {
-        // Ping uptime kuma every 60 seconds
-        axios.get('https://uptime.tolley.dev/api/push/vzGKZlaPK4?msg=OK');
-    }, 60 * 1000);
+    if (process.env.UPTIMEPING) {
+        setInterval(function() {
+            // Ping uptime kuma every 60 seconds
+            axios.get(process.env.UPTIMEPING);
+        }, 60 * 1000);
+    }
 });
 
 client.on('interactionCreate', async interaction => {
