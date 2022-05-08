@@ -18,7 +18,8 @@ for (const file of commandFiles) {
 client.once('ready', () => {
     logger.success('Ready!');
     if (process.env.UPTIMEPING) {
-        setInterval(function () {
+        logger.debug('Sending uptime ping...');
+        setInterval(function() {
             // Ping uptime kuma every 60 seconds
             logger.trace('Pinging uptime server...');
             axios.get(process.env.UPTIMEPING)
