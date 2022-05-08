@@ -65,7 +65,7 @@ module.exports = {
         const amount = interaction.options.getNumber('amount');
         axios({ url: `https://api.exchangerate.host/convert?from=${from}&to=${to}&amount=${amount}`, headers: { 'User-Agent': 'nezz' } })
             .then(res => {
-                interaction.reply(`${amount} ${from} is ${res.data.result} ${to}`);
+                interaction.reply(`${amount} ${from} is ${Math.round((res.data.result + Number.EPSILON) * 100) / 100} ${to}`);
             })
             .catch(err => {
                 logger.error('Error: ', err.message);
