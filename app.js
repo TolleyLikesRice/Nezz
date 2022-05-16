@@ -42,25 +42,27 @@ client.on('interactionCreate', async interaction => {
     }
 });
 
-client.on('guildMemberAdd', (member) => {
+if (process.env.WELCOMECHANNEL) {
+
     const welcomeChannel = client.channels.cache.get(process.env.WELCOMECHANNEL);
 
-    if (!welcomeChannel) return logger.error('Welcome channel was not fuond');
+    if (!welcomeChannel) return logger.error('Welcome channel was not found');
 
-    console.log(member);
+    client.on('guildMemberAdd', (member) => {
+        const embed = new MessageEmbed()
+            .setAuthor({ name: member.username, iconURL: member.displayAvatarURL({ dynamic: true }) })
+            .setColor('#184c46')
+            .setTitle('Welcome to the server!')
+            .setDescription(`Welcome to the server, ${member}!`)
+            .setThumbnail(member.displayAvatarURL())
+            .setTimestamp();
 
-    const embed = new MessageEmbed()
-        .setAuthor({ name: member.username, iconURL: member.displayAvatarURL({ dynamic: true }) })
-        .setColor('#184c46')
-        .setTitle('Welcome to the server!')
-        .setDescription(`Welcome to the server, ${member}!`)
-        .setThumbnail(member.displayAvatarURL())
-        .setTimestamp();
-
-    welcomeChannel.send({ embeds: [embed] });
+        welcomeChannel.send({ embeds: [embed] });
 
 
-});
+    });
+
+}
 
 
 client.login(process.env.TOKEN);
