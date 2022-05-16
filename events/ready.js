@@ -1,5 +1,5 @@
 const tsjl = require('tsjl-node');
-const logger = new tsjl.Logger('nezz', 'app');
+const logger = new tsjl.Logger('nezz', 'ready');
 const axios = require('axios').default;
 require('dotenv').config();
 module.exports = {

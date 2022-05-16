@@ -5,7 +5,7 @@ const logger = new tsjl.Logger('nezz', 'app');
 const axios = require('axios').default;
 require('dotenv').config();
 
-const client = new Client({ intents: ['GUILDS', 'GUILD_MESSAGES', 'GUILD_MEMBERS', 'GUILD_PRESENCES', 'GUILD_VOICE_STATES'] });
+const client = new Client({ intents: ['GUILD_MEMBERS'] });
 client.commands = new Collection();
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 const eventFiles = fs.readdirSync('./events').filter((file) => file.endsWith('.js'));
@@ -51,7 +51,7 @@ client.on('guildMemberAdd', (member) => {
 
     const embed = new MessageEmbed()
         .setAuthor({ name: member.username, iconURL: member.displayAvatarURL({ dynamic: true }) })
-        .setColor('#0099ff')
+        .setColor('#184c46')
         .setTitle('Welcome to the server!')
         .setDescription(`Welcome to the server, ${member}!`)
         .setThumbnail(member.displayAvatarURL())
