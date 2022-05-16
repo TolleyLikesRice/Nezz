@@ -2,9 +2,9 @@
 
 Very still WIP
 
-[Invite](https://bot.systemnezz.xyz)
-[Jenkins Build](https://jenkins.tolley.dev/job/Nezz%20Discord%20Bot/)
-[Project Board](https://github.com/users/TolleyLikesRice/projects/2/views/1)
+[Invite](https://bot.systemnezz.xyz)  
+[Jenkins Build](https://jenkins.tolley.dev/job/Nezz%20Discord%20Bot/)  
+[Project Board](https://github.com/users/TolleyLikesRice/projects/2/views/1)  
 
 ## Credits
 GeorgeFromTFM - Icon  
