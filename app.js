@@ -1,4 +1,3 @@
-/* eslint-disable brace-style */
 const fs = require('node:fs');
 const { Client, Collection, Intents, Message, MessageEmbed } = require('discord.js');
 const tsjl = require('tsjl-node');

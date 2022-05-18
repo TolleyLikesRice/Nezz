@@ -25,16 +25,16 @@ module.exports = {
                 .setRequired(true)),
     async execute(interaction) {
 
-        let guild = interaction.guild;
+        const guild = interaction.guild;
 
-        //update file
-        let guildSettings = JSON.parse(fs.readFileSync('./data/guilds/' + guild.id + '.json', 'utf8'));
+        // update file
+        const guildSettings = JSON.parse(fs.readFileSync('./data/guilds/' + guild.id + '.json', 'utf8'));
         guildSettings.welcomeChannel = interaction.options.getChannel('channel').id;
         guildSettings.welcomeTitle = interaction.options.getString('title');
         guildSettings.welcomeMessage = interaction.options.getString('message');
         guildSettings.welcomeEnabled = interaction.options.getBoolean('enable-message');
         console.log(guildSettings);
-        //overwrite file
+        // overwrite file
         fs.writeFile('./data/guilds/' + guild.id + '.json', JSON.stringify(guildSettings, null, '\t'), (err) => {
             if (err) {
                 console.log(err);
