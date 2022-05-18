@@ -1,3 +1,4 @@
+/* eslint-disable brace-style */
 const fs = require('node:fs');
 const { Client, Collection, Intents, Message, MessageEmbed } = require('discord.js');
 const tsjl = require('tsjl-node');
@@ -42,25 +43,39 @@ client.on('interactionCreate', async interaction => {
     }
 });
 
-client.on('guildMemberAdd', (member) => {
-    const welcomeChannel = client.channels.cache.get(process.env.WELCOMECHANNEL);
 
-    if (!welcomeChannel) return logger.error('Welcome channel was not fuond');
+/* Creating a new file for each guild when the bot joins. */
+client.on('guildCreate', guild => {
+    const file_path = './data/guilds/' + guild.id + '.json';
+    logger.debug('Creating new guild file for ' + guild.name);
 
-    console.log(member);
+    // create a new file or use sql
+    fs.writeFile(file_path, JSON.stringify({
+        welcomeChannel: '',
+        welcomeTitle: '',
+        welcomeMessage: '',
+        welcomeEnabled: false,
+        leaveChannel: '',
+        leaveTitle: '',
+        leaveMessage: '',
+        leaveEnabled: false,
 
-    const embed = new MessageEmbed()
-        .setAuthor({ name: member.username, iconURL: member.displayAvatarURL({ dynamic: true }) })
-        .setColor('#184c46')
-        .setTitle('Welcome to the server!')
-        .setDescription(`Welcome to the server, ${member}!`)
-        .setThumbnail(member.displayAvatarURL())
-        .setTimestamp();
-
-    welcomeChannel.send({ embeds: [embed] });
-
-
+    }, null, '\t'), (err) => {
+        if (err) throw err;
+        logger.debug('The file has been saved!');
+    });
 });
 
+
+/* Deleting the guild file when the bot leaves the guild. */
+client.on('guildDelete', guild => {
+
+    const file_path = './data/guilds/' + guild.id + '.json';
+
+    fs.unlink(file_path, (err) => {
+        if (err) throw err;
+        logger.debug('File deleted!');
+    });
+});
 
 client.login(process.env.TOKEN);

@@ -1,0 +1,5 @@
+
+{
+    "keyword": ["{user}", "{server}", "{server.id}", "{server.memberCount}", "{username}"],
+    "replace": ["\"<@\"+member.user.id+\">\"", "member.guild.name", "member.guild.id", "member.guild.memberCount", "member.user.username"]
+}
