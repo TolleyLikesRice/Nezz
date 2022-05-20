@@ -42,7 +42,6 @@ client.on('interactionCreate', async interaction => {
     }
 });
 
-
 /* Creating a new file for each guild when the bot joins. */
 client.on('guildCreate', guild => {
     const file_path = './data/guilds/' + guild.id + '.json';
