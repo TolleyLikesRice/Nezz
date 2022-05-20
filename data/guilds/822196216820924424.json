@@ -1,0 +1,10 @@
+{
+	"welcomeChannel": "904014686180245524",
+	"welcomeTitle": "whi",
+	"welcomeMessage": "{username}",
+	"welcomeEnabled": true,
+	"leaveChannel": "904014686180245524",
+	"leaveTitle": "l{username}",
+	"leaveMessage": "hi",
+	"leaveEnabled": true
+}
