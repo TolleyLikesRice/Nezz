@@ -1,3 +1,5 @@
+# Archived: Hasn't been touched in two years and there are already too many general purpose Discord bots.
+
 ![Nezz Icon](https://github.com/TolleyLikesRice/Nezz/raw/main/assets/icon-256.png)
 
 Very still WIP
